@@ -1,0 +1,117 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="adminMaster.master.cs" Inherits="Admin_adminMaster" %>
+
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from medifab.dreamstechnologies.com/admin-template/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 27 Nov 2023 06:42:19 GMT -->
+<head runat="server">
+    <script type="text/javascript">
+        function disableBackButton() {
+            window.history.forward();
+        }
+        setTimeout("disableBackButton()", 0);
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <title>Medifab - Bootstrap Admin Template</title>
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/fullcalendar.min.css">
+    <link rel="stylesheet" href="assets/plugins/datatables/datatables.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/plugins/morris/morris.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!--[if lt IE 9]>
+		<script src="assets/js/html5shiv.min.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server" id="form1">
+        <div class="main-wrapper">
+            <div class="header">
+                <div class="header-left">
+                    <a href="#" class="logo">
+                        <img src="assets/img/Logo_Hospital.png" width="35" height="35" alt="">
+                    </a>
+                </div>
+                <a id="mobile_btn" class="mobile_btn float-left" href="#sidebar"><i class="fas fa-bars"></i></a>
+                <ul class="nav user-menu float-right">
+                    <li class="nav-item dropdown has-arrow">
+                        <a href="#" id="menu" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
+                            <span class="user-img">
+                                <img class="rounded-circle" src="assets/img/user.jpg" width="40" alt="Admin">
+                                <span class="status online"></span></span>
+                            <span>Admin</span>
+                        </a>
+                        <div class="dropdown-menu" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-20px, 50px, 0px);">
+                            <a class="dropdown-item" href="ChangePassword.aspx">Change Password</a>
+                            <asp:LinkButton ID="LinkButton1" CssClass="dropdown-item" runat="server" OnClick="LinkButton1_Click">Logout</asp:LinkButton>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <script>
+                document.getElementById('menu').addEventListener('click', function () {
+                    var dropdownContent = this.parentElement.getElementsByClassName('dropdown-menu')[0];
+                    if (dropdownContent.style.display === 'block') {
+                        dropdownContent.style.display = 'none';
+                    } else {
+                        dropdownContent.style.display = 'block';
+                    }
+                });
+            </script>
+            <div class="sidebar" id="sidebar">
+                <div class="sidebar-inner slimscroll">
+                    <div id="sidebar-menu" class="sidebar-menu">
+                        <ul>
+                            <li class="menu-title">Main</li>
+                            <li>
+                                <a href="Appointments.aspx"><i class="far fa-calendar-alt"></i>Appointments</a>
+                            </li>
+                            <li>
+                                <a href="Clients.aspx"><i class="fas fa-wheelchair"></i>Clients</a>
+                            </li>
+                            <li>
+                                <a href="departments.aspx"><i class="far fa-hospital"></i>Departments</a>
+                            </li>
+                            <li>
+                                <a href="ChangePassword.aspx"><i class="fas fa-cog"></i>Password</a>
+                            </li>
+                            <asp:Label ID="Label1" runat="server"></asp:Label>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <div class="sidebar-overlay" data-reff=""></div>
+    <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.slimscroll.js"></script>
+    <script type="text/javascript" src="assets/js/select2.min.js"></script>
+    <script type="text/javascript" src="assets/js/moment.min.js"></script>
+    <script type="text/javascript" src="assets/js/Chart.bundle.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/datatables/datatables.min.js"></script>
+    <script type="text/javascript" src="assets/js/app.js"></script>
+    <script type="text/javascript" src="assets/js/chart.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-3.6.0.min.js"></script>
+</body>
+
+<!-- Mirrored from medifab.dreamstechnologies.com/admin-template/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 27 Nov 2023 06:42:55 GMT -->
+</html>
+
+
